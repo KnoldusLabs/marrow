@@ -11,6 +11,7 @@ module.exports = {
 			removeCombined: true,
 			findNestedDependencies: true,
 			optimize: 'uglify2',
+			preserveLicenseComments: false,
 			paths: {
 				'zepto': '../bower_components/zepto/zepto',
 				'underscore': '../bower_components/underscore/underscore',
