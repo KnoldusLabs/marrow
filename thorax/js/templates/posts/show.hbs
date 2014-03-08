@@ -1,0 +1,21 @@
+{{#loading}}
+	Fetching content
+{{else}}
+	<article role="content" class="single">
+		<header>
+			<h1>{{ title }}</h1>
+			<div class="meta">
+				<time datetime="{{ date }}" class="date">{{pretty-date date}}</time>
+				&lsaquo;
+				{{#categories}}
+					{{#link "categories/{{this}}" expand-tokens=true}}{{this}}{{/link}}
+				{{/categories}}
+				&rsaquo;
+			</div>
+		</header>
+
+		<section class="body">
+			<p>{{{ content }}}</p>
+		</section>
+	</article>
+{{/loading}}

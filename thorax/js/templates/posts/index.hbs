@@ -1,0 +1,16 @@
+{{#loading}}
+	<div class="home">
+		Fetching content...
+	</div>
+{{else}}
+	{{#collection tag="section" class="home" role="content"}}
+		<article class="preview">
+			<time>{{pretty-date date}}</time>
+			<section class="content">
+				<h2 class="title">
+					{{#link "posts/{{id}}" expand-tokens=true}}{{title}}{{/link}}
+				</h2>
+			</section>
+		</article>
+	{{/collection}}
+{{/loading}}
