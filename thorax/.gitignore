@@ -2,6 +2,8 @@ node_modules
 bower_components
 public/css
 public/js
+public/pages
+dist
 tmp
 coverage/
 .sass-cache
