@@ -6,7 +6,8 @@
   - Would CommonJS modules make it smaller?
 - Even less boilerplate than Marionette
 - Less primitives than Marionette, but more explicit in decision making around how components should be used
-- `{{#link }} is super handy, but breaks right/meta clicks
+- `{{#link }}` is super handy, but breaks right/meta clicks.
+  - I should fix this, if I have the time
 - Entire system feels very cohesive and tight.
 
 ## Server Side Generation
