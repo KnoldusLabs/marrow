@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: 'app/**/*.js',
-				tasks: ['browserify'],
+				tasks: ['browserify', 'uglify'],
 				options: {
 					interrupt: true
 				}
@@ -42,12 +42,27 @@ module.exports = function(grunt) {
 			}
 		},
 
+		uglify: {
+			options: {
+				compress: {
+					drop_console: true
+				},
+				mangle: true
+			},
+			bundle: {
+				files: {
+					'public/bundle.min.js': ['public/bundle.js']
+				}
+			}
+		},
+
 		browserify: {
 			options: {
 				debug: false,
 				alias: [
 					'node_modules/rendr-handlebars/index.js:rendr-handlebars'
 				],
+				transforms: [ require('browserify-handlebars') ],
 				aliasMappings: [
 					{
 						cwd: 'app/',
@@ -79,6 +94,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask('runNode', function () {
 		grunt.util.spawn({
@@ -93,12 +109,11 @@ module.exports = function(grunt) {
 	});
 
 
-	grunt.registerTask('compile', ['handlebars', 'browserify']);
+	grunt.registerTask('compile', ['handlebars', 'browserify', 'uglify']);
 
 	// Run the server and watch for file changes
 	grunt.registerTask('server', ['compile', 'runNode', 'watch']);
 
 	// Default task(s).
 	grunt.registerTask('default', ['compile']);
-
 };

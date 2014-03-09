@@ -54,7 +54,9 @@ module.exports = Base.extend({
 
 module.exports.id = 'Posts';
 
-},{"../models/post":"orQrxv","./base":"rCVOCK"}],"GmLQzC":[function(require,module,exports){
+},{"../models/post":"orQrxv","./base":"rCVOCK"}],"app/controllers/categories_controller":[function(require,module,exports){
+module.exports=require('GmLQzC');
+},{}],"GmLQzC":[function(require,module,exports){
 module.exports = {
 	show: function(params, callback) {
 		this.app.fetch({
@@ -63,10 +65,6 @@ module.exports = {
 	}
 };
 
-},{}],"app/controllers/categories_controller":[function(require,module,exports){
-module.exports=require('GmLQzC');
-},{}],"app/controllers/posts_controller":[function(require,module,exports){
-module.exports=require('PkgxEP');
 },{}],"PkgxEP":[function(require,module,exports){
 module.exports = {
 	index: function(params, callback) {
@@ -82,6 +80,8 @@ module.exports = {
 	}
 };
 
+},{}],"app/controllers/posts_controller":[function(require,module,exports){
+module.exports=require('PkgxEP');
 },{}],"Cu+0Ho":[function(require,module,exports){
 module.exports = function(Handlebars) {
 	return {

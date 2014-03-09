@@ -1,5 +1,6 @@
 var express = require('express'),
     rendr = require('rendr'),
+    config = require('./config'),
     app = express();
 
 app.use(express.compress());
@@ -15,14 +16,8 @@ app.use(express.bodyParser());
  * config file. Also, if you want more control over the fetching of data, you can pass your own
  * `dataAdapter` object to the call to `rendr.createServer()`.
  */
-
 var server = rendr.createServer({
-	dataAdapterConfig: {
-		'default': {
-			host: 'localhost:1337',
-			protocol: 'http'
-		}
-	}
+	dataAdapterConfig: config.api
 });
 
 /**
@@ -39,7 +34,7 @@ app.use(server);
  * Start the Express server.
  */
 function start(){
-	var port = process.env.PORT || 3030;
+	var port = process.env.PORT || config.server.port;
 	app.listen(port);
 	console.log("server pid %s listening on port %s in %s mode", process.pid, port, app.get('env'));
 }
@@ -48,8 +43,6 @@ function start(){
  * Only start server if this script is executed, not if it's require()'d.
  * This makes it easier to run integration tests on ephemeral ports.
  */
-if (require.main === module) {
-	start();
-}
+if (require.main === module) start();
 
 exports.app = app;

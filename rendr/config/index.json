@@ -1,0 +1,11 @@
+{
+    "server": {
+        "port": 3030
+    },
+    "api": {
+        "default": {
+            "host": "localhost:1337",
+            "protocol": "http"
+        }
+    }
+}
