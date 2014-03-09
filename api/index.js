@@ -6,6 +6,13 @@ var markdown = require('markdown').markdown;
 
 var app = express();
 
+data.forEach(function(post) {
+	fs.readFile(post.source, function(err, content) {
+		if (err) throw err;
+		post.content = markdown.toHTML(content.toString());
+	});
+});
+
 var allowCrossDomain = function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', "*");
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
@@ -32,12 +39,7 @@ app.get('/posts/:id', function(req, res) {
 	var post = _.findWhere(data, { id: +id });
 
 	console.log("GET: /posts/%s", id);
-
-	fs.readFile(post.source, function(err, content) {
-		if (err) throw err;
-		post.content = markdown.toHTML(content.toString());
-		res.json(post);
-	});
+	res.json(post);
 });
 
 app.get('/categories/:id', function(req, res) {
@@ -51,4 +53,6 @@ app.get('/categories/:id', function(req, res) {
 	res.json(posts);
 });
 
-app.listen(1337);
+app.listen(1337, function() {
+	console.log("Marrow API listening on 1337");
+});
