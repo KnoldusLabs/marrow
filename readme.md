@@ -12,7 +12,7 @@
 - `{{#link }}` is super handy, but breaks right/meta clicks.
   - I should fix this, if I have the time
 - Loading states and rendering states are handlebars helpers. This makes it easy to manage preloading and other "not ready" states.
-- Entire system feels very cohesive and tight.
+- Entire system feels very cohesive and tight. It was very trivial to make the basic blog example, with push state passing between views.
 
 ### Server Side Generation
 
