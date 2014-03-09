@@ -5,6 +5,10 @@
 - All resources have URL persistence. Push state happens for free
 - Rendr interfaces with another api. In this case, my Marrow:API of blog post data.
 
+### Weight
+
+- With Zepto, 153kb (47kb gzipped)
+
 ### TODO
 
 - How can I use this with superset frameworks, such as marionette?
