@@ -37,6 +37,7 @@ if (window.__karma__) {
 require.config({
 	deps: ['main'],
 	paths: {
+		'jquery': pathPrefix + 'bower_components/jquery/jquery',
 		'zepto': pathPrefix + 'bower_components/zepto/zepto',
 		'underscore': pathPrefix + 'bower_components/underscore/underscore',
 		'handlebars': pathPrefix + 'bower_components/handlebars/handlebars',
@@ -59,6 +60,9 @@ require.config({
 		'thorax': {
 			exports: 'Thorax',
 			deps: ['handlebars', 'backbone']
+		},
+		'jquery': {
+			exports: '$'
 		},
 		'zepto': {
 			exports: '$'

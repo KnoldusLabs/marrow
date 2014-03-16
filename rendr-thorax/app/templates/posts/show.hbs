@@ -1,0 +1,17 @@
+<article role="content" class="single">
+	<header>
+		<h1>{{ title }}</h1>
+		<div class="meta">
+			<time datetime="{{ date }}" class="date">{{pretty-date date}}</time>
+			&lsaquo;
+			{{#categories}}
+				<a href="/categories/{{this}}">{{this}}</a>
+			{{/categories}}
+			&rsaquo;
+		</div>
+	</header>
+
+	<section class="body">
+		<p>{{{ content }}}</p>
+	</section>
+</article>

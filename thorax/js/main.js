@@ -1,5 +1,5 @@
 require([
-	'zepto',
+	'jquery',
 	'backbone',
 	'views/root',
 	'views/header',

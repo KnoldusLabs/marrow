@@ -1,17 +1,9 @@
-var express = require('express');
-var _ = require('lodash');
-var fs = require('fs');
-var data = require("./data");
+var express  = require('express');
+var app      = express();
+var config   = require('./config');
+var db       = require('./database');
 var markdown = require('markdown').markdown;
-
-var app = express();
-
-data.forEach(function(post) {
-	fs.readFile(post.source, function(err, content) {
-		if (err) throw err;
-		post.content = markdown.toHTML(content.toString());
-	});
-});
+var _        = require('lodash');
 
 var allowCrossDomain = function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', "*");
@@ -23,36 +15,44 @@ var allowCrossDomain = function(req, res, next) {
 app.configure(function() {
 	app.use(allowCrossDomain);
 	app.use(app.router);
+	app.use(express.logger('dev'));
 });
 
 app.get('/', function(req, res){
-	res.send('This is the Marrow API. Welcome');
+	res.end('This is the Marrow API. Welcome');
 });
 
 app.get('/posts', function(req, res) {
 	console.log("GET: /posts");
-	res.json(data);
+
+	db.Post.findAll()
+		.success(function(d) { res.json(d); })
+		.error(function(e)   { res.end(e);  });
 });
 
 app.get('/posts/:id', function(req, res) {
 	var id = req.params.id;
-	var post = _.findWhere(data, { id: +id });
 
 	console.log("GET: /posts/%s", id);
-	res.json(post);
+
+	db.Post.find(id)
+		.success(function(d) {
+			d.content = markdown.toHTML(d.content.toString());
+			res.json(d);
+		})
+		.error(function(err) { res.end(err); });
 });
 
 app.get('/categories/:id', function(req, res) {
-	var type = req.params.id;
-	var posts = _.filter(data, function(d) {
-		return d.categories.indexOf(type) > -1;
-	});
+	var id = req.params.id;
 
-	console.log("GET: /categories/%s", type);
+	console.log("GET: /categories/%s", id);
 
-	res.json(posts);
+	db.Category.find(id)
+		.success(function(d) { res.json(d);  })
+		.error(function(err) { res.end(err); });
 });
 
-app.listen(1337, function() {
-	console.log("Marrow API listening on 1337");
+app.listen(config.PORT, function() {
+	console.log("Marrow API listening on %s", config.PORT);
 });

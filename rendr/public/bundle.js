@@ -32,15 +32,13 @@ module.exports = BaseApp.extend({
 
 },{"./lib/handlebarsHelpers":"Cu+0Ho","rendr/shared/app":60}],"app/app":[function(require,module,exports){
 module.exports=require('LentoW');
-},{}],"app/collections/base":[function(require,module,exports){
-module.exports=require('rCVOCK');
 },{}],"rCVOCK":[function(require,module,exports){
 var RendrBase = require('rendr/shared/base/collection');
 
 module.exports = RendrBase.extend({});
 
-},{"rendr/shared/base/collection":61}],"app/collections/posts":[function(require,module,exports){
-module.exports=require('NpA9XK');
+},{"rendr/shared/base/collection":61}],"app/collections/base":[function(require,module,exports){
+module.exports=require('rCVOCK');
 },{}],"NpA9XK":[function(require,module,exports){
 var Post = require('../models/post');
 var Base = require('./base');
@@ -54,7 +52,9 @@ module.exports = Base.extend({
 
 module.exports.id = 'Posts';
 
-},{"../models/post":"orQrxv","./base":"rCVOCK"}],"app/controllers/categories_controller":[function(require,module,exports){
+},{"../models/post":"orQrxv","./base":"rCVOCK"}],"app/collections/posts":[function(require,module,exports){
+module.exports=require('NpA9XK');
+},{}],"app/controllers/categories_controller":[function(require,module,exports){
 module.exports=require('GmLQzC');
 },{}],"GmLQzC":[function(require,module,exports){
 module.exports = {
@@ -65,6 +65,8 @@ module.exports = {
 	}
 };
 
+},{}],"app/controllers/posts_controller":[function(require,module,exports){
+module.exports=require('PkgxEP');
 },{}],"PkgxEP":[function(require,module,exports){
 module.exports = {
 	index: function(params, callback) {
@@ -80,8 +82,8 @@ module.exports = {
 	}
 };
 
-},{}],"app/controllers/posts_controller":[function(require,module,exports){
-module.exports=require('PkgxEP');
+},{}],"app/lib/handlebarsHelpers":[function(require,module,exports){
+module.exports=require('Cu+0Ho');
 },{}],"Cu+0Ho":[function(require,module,exports){
 module.exports = function(Handlebars) {
 	return {
@@ -97,14 +99,12 @@ module.exports = function(Handlebars) {
 	};
 };
 
-},{}],"app/lib/handlebarsHelpers":[function(require,module,exports){
-module.exports=require('Cu+0Ho');
+},{}],"app/models/base":[function(require,module,exports){
+module.exports=require('qnrstJ');
 },{}],"qnrstJ":[function(require,module,exports){
 module.exports = require('rendr/shared/base/model').extend({});
 
-},{"rendr/shared/base/model":62}],"app/models/base":[function(require,module,exports){
-module.exports=require('qnrstJ');
-},{}],"Lkugus":[function(require,module,exports){
+},{"rendr/shared/base/model":62}],"Lkugus":[function(require,module,exports){
 var Base = require('./base');
 
 module.exports = Base.extend({
@@ -115,6 +115,8 @@ module.exports.id = 'Build';
 
 },{"./base":"qnrstJ"}],"app/models/build":[function(require,module,exports){
 module.exports=require('Lkugus');
+},{}],"app/models/post":[function(require,module,exports){
+module.exports=require('orQrxv');
 },{}],"orQrxv":[function(require,module,exports){
 var Base = require('./base');
 
@@ -124,9 +126,7 @@ module.exports = Base.extend({
 
 module.exports.id = 'Post';
 
-},{"./base":"qnrstJ"}],"app/models/post":[function(require,module,exports){
-module.exports=require('orQrxv');
-},{}],"86KJBY":[function(require,module,exports){
+},{"./base":"qnrstJ"}],"86KJBY":[function(require,module,exports){
 var BaseClientRouter = require('rendr/client/router');
 
 var Router = module.exports = function Router(options) {
@@ -160,6 +160,8 @@ module.exports = function(match) {
 	match('/categories/:type',  'categories#show');
 };
 
+},{}],"app/templates/compiledTemplates":[function(require,module,exports){
+module.exports=require('rFRVhs');
 },{}],"rFRVhs":[function(require,module,exports){
 module.exports = function(Handlebars) {
 
@@ -269,8 +271,6 @@ function program1(depth0,data) {
 return templates;
 
 };
-},{}],"app/templates/compiledTemplates":[function(require,module,exports){
-module.exports=require('rFRVhs');
 },{}],"app/views/base":[function(require,module,exports){
 module.exports=require('6kWBjj');
 },{}],"6kWBjj":[function(require,module,exports){
@@ -280,24 +280,22 @@ var RendrView = require('rendr/shared/base/view');
 // application's views.
 module.exports = RendrView.extend({});
 
-},{"rendr/shared/base/view":64}],"app/views/categories/show":[function(require,module,exports){
-module.exports=require('9GHdMD');
-},{}],"9GHdMD":[function(require,module,exports){
+},{"rendr/shared/base/view":64}],"9GHdMD":[function(require,module,exports){
 module.exports = require('../base').extend({});
 module.exports.id = 'posts/index';
 
-},{"../base":"6kWBjj"}],"app/views/posts/index":[function(require,module,exports){
+},{"../base":"6kWBjj"}],"app/views/categories/show":[function(require,module,exports){
+module.exports=require('9GHdMD');
+},{}],"app/views/posts/index":[function(require,module,exports){
 module.exports=require('doHRJT');
 },{}],"doHRJT":[function(require,module,exports){
 module.exports=require("9GHdMD")
-},{"../base":"6kWBjj"}],"app/views/posts/show":[function(require,module,exports){
-module.exports=require('5MSsN6');
-},{}],"5MSsN6":[function(require,module,exports){
+},{"../base":"6kWBjj"}],"5MSsN6":[function(require,module,exports){
 module.exports = require('../base').extend({});
 module.exports.id = 'posts/show';
 
-},{"../base":"6kWBjj"}],"jquery":[function(require,module,exports){
-module.exports=require('N/lSNf');
+},{"../base":"6kWBjj"}],"app/views/posts/show":[function(require,module,exports){
+module.exports=require('5MSsN6');
 },{}],"N/lSNf":[function(require,module,exports){
 (function (global){
 (function browserifyShim(module, exports, define, browserify_shim__define__module__export__) {
@@ -309,6 +307,8 @@ var Zepto=function(){function L(t){return null==t?String(t):j[T.call(t)]||"objec
 }).call(global, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],"jquery":[function(require,module,exports){
+module.exports=require('N/lSNf');
 },{}],35:[function(require,module,exports){
 
 },{}],36:[function(require,module,exports){
@@ -366,6 +366,8 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 
+},{}],"rendr-handlebars":[function(require,module,exports){
+module.exports=require('k+WLb7');
 },{}],"k+WLb7":[function(require,module,exports){
 var Handlebars = require('handlebars');
 
@@ -431,9 +433,7 @@ module.exports = function(options){
   return localExports;
 }
 
-},{"./shared/helpers":54,"./shared/templateFinder":55,"handlebars":53}],"rendr-handlebars":[function(require,module,exports){
-module.exports=require('k+WLb7');
-},{}],39:[function(require,module,exports){
+},{"./shared/helpers":54,"./shared/templateFinder":55,"handlebars":53}],39:[function(require,module,exports){
 "use strict";
 /*globals Handlebars: true */
 var Handlebars = require("./handlebars.runtime")["default"];

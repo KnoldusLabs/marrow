@@ -5,7 +5,7 @@ define([
 		name: 'categories',
 		comparator: 'date',
 		url: function() {
-			return 'http://localhost:1337/categories/' + this.where;
+			return 'http://192.168.8.173:1337/categories/' + this.where;
 		}
 	});
 });

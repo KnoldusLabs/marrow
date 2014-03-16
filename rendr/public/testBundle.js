@@ -32,14 +32,14 @@ module.exports = BaseApp.extend({
 
 },{"./lib/handlebarsHelpers":"Cu+0Ho","rendr/shared/app":93}],"app/app":[function(require,module,exports){
 module.exports=require('LentoW');
-},{}],"app/collections/base":[function(require,module,exports){
-module.exports=require('rCVOCK');
 },{}],"rCVOCK":[function(require,module,exports){
 var RendrBase = require('rendr/shared/base/collection');
 
 module.exports = RendrBase.extend({});
 
-},{"rendr/shared/base/collection":94}],"NpA9XK":[function(require,module,exports){
+},{"rendr/shared/base/collection":94}],"app/collections/base":[function(require,module,exports){
+module.exports=require('rCVOCK');
+},{}],"NpA9XK":[function(require,module,exports){
 var Post = require('../models/post');
 var Base = require('./base');
 
@@ -99,12 +99,12 @@ module.exports = function(Handlebars) {
 
 },{}],"app/lib/handlebarsHelpers":[function(require,module,exports){
 module.exports=require('Cu+0Ho');
-},{}],"app/models/base":[function(require,module,exports){
-module.exports=require('qnrstJ');
 },{}],"qnrstJ":[function(require,module,exports){
 module.exports = require('rendr/shared/base/model').extend({});
 
-},{"rendr/shared/base/model":95}],"Lkugus":[function(require,module,exports){
+},{"rendr/shared/base/model":95}],"app/models/base":[function(require,module,exports){
+module.exports=require('qnrstJ');
+},{}],"Lkugus":[function(require,module,exports){
 var Base = require('./base');
 
 module.exports = Base.extend({
