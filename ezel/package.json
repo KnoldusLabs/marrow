@@ -10,7 +10,6 @@
     "sharify": "*",
     "backbone": "*",
     "backbone-super-sync": "*",
-    "q": "^1.0.1",
     "handlebars": "~1.3.0",
     "express-handlebars": "0.0.2",
     "express3-handlebars": "^0.5.0"
