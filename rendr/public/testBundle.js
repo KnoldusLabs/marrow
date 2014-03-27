@@ -54,6 +54,8 @@ module.exports.id = 'Posts';
 
 },{"../models/post":"orQrxv","./base":"rCVOCK"}],"app/collections/posts":[function(require,module,exports){
 module.exports=require('NpA9XK');
+},{}],"app/controllers/categories_controller":[function(require,module,exports){
+module.exports=require('GmLQzC');
 },{}],"GmLQzC":[function(require,module,exports){
 module.exports = {
 	show: function(params, callback) {
@@ -63,8 +65,6 @@ module.exports = {
 	}
 };
 
-},{}],"app/controllers/categories_controller":[function(require,module,exports){
-module.exports=require('GmLQzC');
 },{}],"PkgxEP":[function(require,module,exports){
 module.exports = {
 	index: function(params, callback) {
@@ -82,6 +82,8 @@ module.exports = {
 
 },{}],"app/controllers/posts_controller":[function(require,module,exports){
 module.exports=require('PkgxEP');
+},{}],"app/lib/handlebarsHelpers":[function(require,module,exports){
+module.exports=require('Cu+0Ho');
 },{}],"Cu+0Ho":[function(require,module,exports){
 module.exports = function(Handlebars) {
 	return {
@@ -97,14 +99,12 @@ module.exports = function(Handlebars) {
 	};
 };
 
-},{}],"app/lib/handlebarsHelpers":[function(require,module,exports){
-module.exports=require('Cu+0Ho');
+},{}],"app/models/base":[function(require,module,exports){
+module.exports=require('qnrstJ');
 },{}],"qnrstJ":[function(require,module,exports){
 module.exports = require('rendr/shared/base/model').extend({});
 
-},{"rendr/shared/base/model":95}],"app/models/base":[function(require,module,exports){
-module.exports=require('qnrstJ');
-},{}],"Lkugus":[function(require,module,exports){
+},{"rendr/shared/base/model":95}],"Lkugus":[function(require,module,exports){
 var Base = require('./base');
 
 module.exports = Base.extend({
@@ -280,17 +280,17 @@ module.exports = RendrView.extend({});
 
 },{"rendr/shared/base/view":97}],"app/views/base":[function(require,module,exports){
 module.exports=require('6kWBjj');
-},{}],"app/views/categories/show":[function(require,module,exports){
-module.exports=require('9GHdMD');
 },{}],"9GHdMD":[function(require,module,exports){
 module.exports = require('../base').extend({});
 module.exports.id = 'posts/index';
 
-},{"../base":"6kWBjj"}],"doHRJT":[function(require,module,exports){
-module.exports=require("9GHdMD")
-},{"../base":"6kWBjj"}],"app/views/posts/index":[function(require,module,exports){
+},{"../base":"6kWBjj"}],"app/views/categories/show":[function(require,module,exports){
+module.exports=require('9GHdMD');
+},{}],"app/views/posts/index":[function(require,module,exports){
 module.exports=require('doHRJT');
-},{}],"app/views/posts/show":[function(require,module,exports){
+},{}],"doHRJT":[function(require,module,exports){
+module.exports=require("9GHdMD")
+},{"../base":"6kWBjj"}],"app/views/posts/show":[function(require,module,exports){
 module.exports=require('5MSsN6');
 },{}],"5MSsN6":[function(require,module,exports){
 module.exports = require('../base').extend({});

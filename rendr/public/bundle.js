@@ -54,8 +54,6 @@ module.exports.id = 'Posts';
 
 },{"../models/post":"orQrxv","./base":"rCVOCK"}],"app/collections/posts":[function(require,module,exports){
 module.exports=require('NpA9XK');
-},{}],"app/controllers/categories_controller":[function(require,module,exports){
-module.exports=require('GmLQzC');
 },{}],"GmLQzC":[function(require,module,exports){
 module.exports = {
 	show: function(params, callback) {
@@ -65,8 +63,8 @@ module.exports = {
 	}
 };
 
-},{}],"app/controllers/posts_controller":[function(require,module,exports){
-module.exports=require('PkgxEP');
+},{}],"app/controllers/categories_controller":[function(require,module,exports){
+module.exports=require('GmLQzC');
 },{}],"PkgxEP":[function(require,module,exports){
 module.exports = {
 	index: function(params, callback) {
@@ -82,6 +80,8 @@ module.exports = {
 	}
 };
 
+},{}],"app/controllers/posts_controller":[function(require,module,exports){
+module.exports=require('PkgxEP');
 },{}],"app/lib/handlebarsHelpers":[function(require,module,exports){
 module.exports=require('Cu+0Ho');
 },{}],"Cu+0Ho":[function(require,module,exports){
@@ -104,7 +104,9 @@ module.exports=require('qnrstJ');
 },{}],"qnrstJ":[function(require,module,exports){
 module.exports = require('rendr/shared/base/model').extend({});
 
-},{"rendr/shared/base/model":62}],"Lkugus":[function(require,module,exports){
+},{"rendr/shared/base/model":62}],"app/models/build":[function(require,module,exports){
+module.exports=require('Lkugus');
+},{}],"Lkugus":[function(require,module,exports){
 var Base = require('./base');
 
 module.exports = Base.extend({
@@ -113,11 +115,7 @@ module.exports = Base.extend({
 });
 module.exports.id = 'Build';
 
-},{"./base":"qnrstJ"}],"app/models/build":[function(require,module,exports){
-module.exports=require('Lkugus');
-},{}],"app/models/post":[function(require,module,exports){
-module.exports=require('orQrxv');
-},{}],"orQrxv":[function(require,module,exports){
+},{"./base":"qnrstJ"}],"orQrxv":[function(require,module,exports){
 var Base = require('./base');
 
 module.exports = Base.extend({
@@ -126,7 +124,11 @@ module.exports = Base.extend({
 
 module.exports.id = 'Post';
 
-},{"./base":"qnrstJ"}],"86KJBY":[function(require,module,exports){
+},{"./base":"qnrstJ"}],"app/models/post":[function(require,module,exports){
+module.exports=require('orQrxv');
+},{}],"app/router":[function(require,module,exports){
+module.exports=require('86KJBY');
+},{}],"86KJBY":[function(require,module,exports){
 var BaseClientRouter = require('rendr/client/router');
 
 var Router = module.exports = function Router(options) {
@@ -149,9 +151,7 @@ Router.prototype.trackImpression = function() {
   }
 };
 
-},{"rendr/client/router":57}],"app/router":[function(require,module,exports){
-module.exports=require('86KJBY');
-},{}],"app/routes":[function(require,module,exports){
+},{"rendr/client/router":57}],"app/routes":[function(require,module,exports){
 module.exports=require('bbl2t2');
 },{}],"bbl2t2":[function(require,module,exports){
 module.exports = function(match) {

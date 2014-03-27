@@ -2,8 +2,6 @@ var express  = require('express');
 var app      = express();
 var config   = require('./config');
 var db       = require('./database');
-var markdown = require('markdown').markdown;
-var _        = require('lodash');
 
 var allowCrossDomain = function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', "*");
@@ -18,7 +16,7 @@ app.configure(function() {
 	app.use(express.logger('dev'));
 });
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
 	res.end('This is the Marrow API. Welcome');
 });
 
@@ -36,10 +34,7 @@ app.get('/posts/:id', function(req, res) {
 	console.log("GET: /posts/%s", id);
 
 	db.Post.find(id)
-		.success(function(d) {
-			d.content = markdown.toHTML(d.content.toString());
-			res.json(d);
-		})
+		.success(function(d) { res.json(d);  })
 		.error(function(err) { res.end(err); });
 });
 
